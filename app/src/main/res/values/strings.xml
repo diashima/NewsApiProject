@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NewsApiProject</string>
+    <string name="top_headline_news">Top headline news</string>
+    <string name="all_news">All news</string>
+</resources>
