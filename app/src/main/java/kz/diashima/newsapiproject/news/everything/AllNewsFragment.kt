@@ -1,6 +1,7 @@
 package kz.diashima.newsapiproject.news.everything
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,5 +24,6 @@ class AllNewsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d("Test", "AllNewsFragment")
     }
 }
