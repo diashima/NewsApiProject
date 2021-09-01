@@ -20,7 +20,7 @@ class PageAdapter(val items: List<Int>) : RecyclerView.Adapter<PageAdapter.PageV
 
     inner class PageViewHolder(private val binding: ItemPageBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(page: Int) {
-
+            binding.pageNumber.text = page.toString()
         }
     }
 }
