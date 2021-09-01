@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kz.diashima.newsapiproject.ApiClient
 import kz.diashima.newsapiproject.ApiInterface
 import kz.diashima.newsapiproject.Variables
@@ -17,13 +21,13 @@ import kz.diashima.newsapiproject.news.PageAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.Math.ceil
-
 class TopHeadlinesFragment : Fragment() {
 
     private var _binding: FragmentTopHeadlinesBinding? = null
     private val binding get() = _binding!!
     private var listInt = mutableListOf(1)
+    private val scope = MainScope()
+    private var job: Job? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +41,16 @@ class TopHeadlinesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         searchTop()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        startUpdates()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        stopUpdates()
     }
 
     private fun searchTop() {
@@ -58,9 +72,8 @@ class TopHeadlinesFragment : Fragment() {
                             }
                         }
 
-                        Log.d("Test", response.body().toString())
+                        Log.d("Test", "News updated")
                         binding.recyclerTop.apply {
-                            Log.d("Test", "I am here")
                             layoutManager = LinearLayoutManager(context)
                             adapter = ArticleAdapter(response.body()!!.articles)
                         }
@@ -78,5 +91,20 @@ class TopHeadlinesFragment : Fragment() {
             }
 
         })
+    }
+
+    private fun startUpdates() {
+        stopUpdates()
+        job = scope.launch {
+            while(true) {
+                delay(5000L)
+                searchTop()
+            }
+        }
+    }
+
+    private fun stopUpdates() {
+        job?.cancel()
+        job = null
     }
 }
