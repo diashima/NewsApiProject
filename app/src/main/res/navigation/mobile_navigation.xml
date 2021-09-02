@@ -2,20 +2,21 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/topHeadlinesFragment">
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_top_headline">
 
     <fragment
-        android:id="@+id/topHeadlinesFragment"
+        android:id="@+id/navigation_top_headline"
         android:name="kz.diashima.newsapiproject.news.top.TopHeadlinesFragment"
-        android:label="fragment_top"
+        android:label="Top Headlines"
         tools:layout="@layout/fragment_top_headlines">
     </fragment>
 
     <fragment
-        android:id="@+id/allNewsFragment"
+        android:id="@+id/navigation_all"
         android:name="kz.diashima.newsapiproject.news.everything.AllNewsFragment"
-        android:label="fragment_all"
-        tools:layout="@layout/fragment_all_news">
+        android:label="All news"
+        tools:layout="@layout/fragment_all_news" >
     </fragment>
+
 </navigation>

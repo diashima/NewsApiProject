@@ -3,6 +3,7 @@
     package="kz.diashima.newsapiproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -10,7 +11,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NewsApiProject">
+        android:theme="@style/Theme.NewsApiProject.NoActionBar">
+        <activity
+            android:name=".news.details.DetailsActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

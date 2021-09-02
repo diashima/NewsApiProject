@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "653508669967",
+    "project_id": "newsproject-8273f",
+    "storage_bucket": "newsproject-8273f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653508669967:android:02ead353aa7922d90aa97a",
+        "android_client_info": {
+          "package_name": "kz.diashima.newsapiproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653508669967-lpt5r6v8s96hhm0vrl1ncies0obmbjtt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWNRtzeeNXBdTR2RQTX7gHhT2Wcob8rzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653508669967-lpt5r6v8s96hhm0vrl1ncies0obmbjtt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

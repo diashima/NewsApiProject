@@ -4,7 +4,6 @@
         android:id="@+id/navigation_top_headline"
         android:icon="@drawable/ic_hot"
         android:title="@string/top_headline_news" />
-
     <item
         android:id="@+id/navigation_all"
         android:icon="@drawable/ic_dashboard_black_24dp"
